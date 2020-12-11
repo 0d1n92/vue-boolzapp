@@ -28,7 +28,7 @@
 
           </div>
           <div id="container_previews_chat">
-            <div  v-for="element in contacts" class="previews_chat">
+            <div  v-for="(element, index) in contacts" @click="activeChat(index)" class="previews_chat">
               <img class="avatar" :src="element.avatar">
                 <ul class="previews" >
                   <li>{{element.name}}</li>
@@ -47,16 +47,17 @@
           </div>
           <!-- chat -->
           <div  id="container_message" class="clearfix">
-            <div v-for="element in this.contacts[0].messages" v-if="element.status=='sent'"    class="sent_message">
+            <div v-for="element in this.contacts[this.indexChat].messages" v-if="element.status=='sent'"    class="sent_message">
               {{element.text}}
             </div>
-            <div   v-for="element in this.contacts[0].messages" v-if="element.status=='received'" class="recevied_message">
+            <div   v-for="element in this.contacts[this.indexChat].messages" v-if="element.status=='received'" class="recevied_message">
               {{element.text}}
             </div>
           </div>
 
           <div id="form_instantchat">
-
+            <input type="text"  name="" value="">
+            <button  type="button" name="button">send</button>
           </div>
 
         </section>
