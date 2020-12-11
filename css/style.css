@@ -40,6 +40,7 @@
 
 img.avatar {
   height: 50px;
+
 }
 /* aside previews chat */
 aside {
@@ -60,6 +61,12 @@ aside {
   background-color: white;
   height: calc( 100% - 162px);
   overflow: auto;
+}
+#container_previews_chat ul {
+  display: inline-block;
+}
+#container_previews_chat ul.previews li {
+  list-style: none;
 }
 /* aside previews chat-CLOSE */
 /* select chat view */
