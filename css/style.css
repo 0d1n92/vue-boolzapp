@@ -1,0 +1,12 @@
+/* RESET */
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* RESET-CLOSE */
+#background_wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to bottom,#009688 20%,#d9dbd5 20%);
+}
