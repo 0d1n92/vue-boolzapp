@@ -5,6 +5,14 @@
   box-sizing: border-box;
 }
 /* RESET-CLOSE */
+/* clearfix */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+
+}
+
 #background_wrapper {
   width: 100vw;
   height: 100vh;
@@ -29,6 +37,8 @@
   height: 60px;
   width: 100%;
 }
+
+
 /* aside previews chat */
 aside {
   width:38%;
@@ -58,10 +68,26 @@ aside {
 }
 #container_message {
   height: calc(100% - 110px);
+  
+  align-content: space-around;
+
   background-image: url(../img/background_chat.jpg);
   overflow: auto;
 }
-
+.sent_message, .recevied_message {
+  font-size:20px;
+  padding: 20px; /*stessi pixel del font*/
+  border-radius: 10px;
+  clear: both;
+}
+.sent_message {
+  background-color: #d5f9ba;
+  float:right;
+}
+.recevied_message {
+  background: white;
+  float: left;
+}
 #form_instantchat {
   height: 50px;
 }
