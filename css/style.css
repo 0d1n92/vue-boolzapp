@@ -33,10 +33,22 @@
 aside {
   width:38%;
   height: 100%;
-  background-color: red;
 }
 
-
+#banner_notify {
+  height: 68px;
+  width: 100%;
+  background-color: #8edafc;
+}
+#form_search {
+  height: 34px;
+  background-color:#fafafa;
+}
+#previews_chat {
+  background-color: white;
+  height: calc( 100% - 162px);
+  overflow: auto;
+}
 /* aside previews chat-CLOSE */
 /* select chat view */
 #selected_chat_view {
@@ -45,7 +57,9 @@ aside {
   background-color: blue;
 }
 #container_message {
-  height: calc(100% - 110px)
+  height: calc(100% - 110px);
+  background-image: url(../img/background_chat.jpg);
+  overflow: auto;
 }
 
 #form_instantchat {
