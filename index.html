@@ -27,7 +27,11 @@
           <div id="form_search">
 
           </div>
-          <div id="previews_chat">
+          <div id="container_previews_chat">
+            <div  v-for="element in contacts" class="previews_chat">
+              <img class="avatar" :src="element.avatar">
+              {{element.name}}
+            </div>
 
           </div>
 

@@ -10,7 +10,7 @@ data: {
     contacts: [
       {
         name: 'Michele',
-        avatar: '_1',
+        avatar: 'img/icons/avatars/avatar_michele.png',
         visible: true,
         messages: [
           {
@@ -32,7 +32,7 @@ data: {
       },
       {
         name: 'Fabio',
-        avatar: '_2',
+        avatar: 'img/icons/avatars/fabio_avatar.png',
         visible: true,
         messages: [
           {
@@ -54,7 +54,7 @@ data: {
       },
       {
         name: 'Samuele',
-        avatar: '_3',
+        avatar: 'img/icons/avatars/samuele_avatar.png',
         visible: true,
         messages: [
           {
@@ -76,7 +76,7 @@ data: {
       },
       {
         name: 'Luisa',
-        avatar: '_4',
+        avatar: 'img/icons/avatars/luisa_avatar.png',
         visible: true,
         messages: [
           {
