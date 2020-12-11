@@ -9,4 +9,47 @@
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(to bottom,#009688 20%,#d9dbd5 20%);
+  padding:25px 0;
 }
+
+/* vue container */
+#app {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+
+}
+
+#header_selected_chat, #form_instantchat,#header_navigation_app {
+  background-color: #eaeaea;
+}
+
+#header_selected_chat, #header_navigation_app {
+  height: 60px;
+  width: 100%;
+}
+/* aside previews chat */
+aside {
+  width:38%;
+  height: 100%;
+  background-color: red;
+}
+
+
+/* aside previews chat-CLOSE */
+/* select chat view */
+#selected_chat_view {
+  width:62%;
+  height: 100%;
+  background-color: blue;
+}
+#container_message {
+  height: calc(100% - 110px)
+}
+
+#form_instantchat {
+  height: 50px;
+}
+
+/* select chat view-CLOSE */
