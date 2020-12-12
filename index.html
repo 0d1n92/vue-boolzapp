@@ -30,10 +30,21 @@
             </div>
           </div>
           <div id="banner_notify">
+              <i class="fas fa-bell-slash"></i>
+
+              <ul id="text_notify">
+                <li>
+                  <h2>Ricevi notifiche di nuovi messaggi</h2>
+                </li>
+                <li>
+                  <a href="#">Attiva notifiche desktop</a>
+                </li>
+              </ul>
 
           </div>
           <div id="form_search">
-
+            <button type="button" id="btn_search" name="button"><i class="fas fa-search"></i></button>
+            <input placeholder="Cerca o inizia un nuova chat" type="text" name="" value="">
           </div>
           <div id="container_previews_chat">
             <div  v-for="(element, index) in contacts" @click="activeChat(index)" class="previews_chat">
