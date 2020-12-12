@@ -8,10 +8,15 @@ var app= new Vue({
 el: '#app',
 data: {
     indexChat:0,
+
+    user:{
+        name: 'Enrico',
+        surname: 'Rombaldoni',
+      },
     contacts: [
       {
-        name: 'Michele',
-        avatar: 'img/icons/avatars/avatar_michele.png',
+        name: "Lapo",
+        avatar: 'img/icons/avatars/lapo_avatar.png',
         visible: true,
         messages: [
           {
@@ -32,8 +37,8 @@ data: {
         ],
       },
       {
-        name: 'Fabio',
-        avatar: 'img/icons/avatars/fabio_avatar.png',
+        name: 'Bendetta',
+        avatar: 'img/icons/avatars/benedetta_avatar.png',
         visible: true,
         messages: [
           {
@@ -54,8 +59,8 @@ data: {
         ],
       },
       {
-        name: 'Samuele',
-        avatar: 'img/icons/avatars/samuele_avatar.png',
+        name: 'Putin',
+        avatar: 'img/icons/avatars/putin_avatar.png',
         visible: true,
         messages: [
           {
@@ -76,8 +81,8 @@ data: {
           ],
       },
       {
-        name: 'Luisa',
-        avatar: 'img/icons/avatars/luisa_avatar.png',
+        name: 'Yagami',
+        avatar: 'img/icons/avatars/yagami_avatar.png',
         visible: true,
         messages: [
           {
@@ -99,6 +104,7 @@ data: {
   methods: {
   // Click sul contatto mostra la conversazione del contatto cliccato
     activeChat: function (index) {
+
       this.indexChat=index;
 
     }

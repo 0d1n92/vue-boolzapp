@@ -4,6 +4,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+  border: 0;
+}
+button:focus,
+input:focus,
+textarea:focus {
+  border: 0;
+  outline: none;
+}
+
 /* RESET-CLOSE */
 /* clearfix */
 .clearfix::after {
@@ -15,7 +33,14 @@
 /* clearfix-CLOSE */
 body {
   font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
+
+.float_right {
+  float: right;
+}
+
+
 
 #background_wrapper {
   width: 100vw;
@@ -43,14 +68,39 @@ body {
 }
 
 img.avatar {
-  height: 50px;
+  height: 40px;
+  border-radius: 50%;
 
 }
 /* aside previews chat */
 aside {
   width:38%;
   height: 100%;
+
 }
+#header_navigation_app {
+  padding-left: 10px;
+}
+#btn_user, #user_info {
+  display: inline-block;
+}
+#btn_user,#user_info {
+  line-height: 60px;
+}
+#btn_user button,#user_info img {
+  vertical-align: middle;
+}
+p#user_id {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 500;
+  margin-left: 10px;
+}
+#btn_user button {
+  margin: 0 8px;
+  color: #b1b1b1;
+}
+
 
 #banner_notify {
   height: 68px;
@@ -95,8 +145,8 @@ aside {
   overflow: auto;
 }
 .sent_message, .recevied_message {
-  font-size:20px;
-  padding: 20px; /*stessi pixel del font*/
+  font-size:15px;
+  padding: 16px; /*stessi pixel del font*/
   border-radius: 10px;
   clear: both;
 }

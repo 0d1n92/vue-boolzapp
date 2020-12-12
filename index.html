@@ -15,12 +15,18 @@
       <div id="app">
 
         <aside id="navigation_app">
-          <div id="header_navigation_app">
+          <div id="header_navigation_app" class="clearfix">
             <div id="user_info">
-
+              <img class="avatar" src="img/icons/avatars/mio_avatar.png" alt="">
+              <p id="user_id" >
+                {{user.name}} {{user.surname}}
+              </p>
+              </p>
             </div>
-            <div id="option_app">
-
+            <div id="btn_user" class="float_right">
+              <button type="button" name="button"><i class="fas fa-circle-notch"></i></button>
+              <button type="button" name="button"><i class="fas fa-comment-alt"></i></button>
+              <button type="button" name="button"><i class="fas fa-ellipsis-v"></i></button>
             </div>
           </div>
           <div id="banner_notify">
