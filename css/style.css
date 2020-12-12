@@ -68,6 +68,13 @@ aside {
 #container_previews_chat ul.previews li {
   list-style: none;
 }
+.previews_message {
+  width: 200px;
+  color: #b6c0d3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 /* aside previews chat-CLOSE */
 /* select chat view */
 #selected_chat_view {
