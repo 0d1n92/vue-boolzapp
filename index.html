@@ -47,7 +47,7 @@
             <input placeholder="Cerca o inizia un nuova chat" type="text" name="" value="">
           </div>
           <div id="container_previews_chat">
-            <div  v-for="(element, index) in contacts" @click="activeChat(index)" class="previews_chat">
+            <div  v-for="(element, index) in contacts" @click="activeChat(index)" :class='(element.visible==true)? "":"active"'class="previews_chat">
               <img class="avatar" :src="element.avatar">
                 <ul class="previews" >
                   <li>{{element.name}}</li>

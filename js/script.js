@@ -8,6 +8,8 @@ var app= new Vue({
 el: '#app',
 data: {
     indexChat:0,
+    activeClass:false,
+
 
     user:{
         name: 'Enrico',
@@ -104,9 +106,11 @@ data: {
   methods: {
   // Click sul contatto mostra la conversazione del contatto cliccato
     activeChat: function (index) {
-
+      this.contacts.forEach((element) => {
+        element.visible=true;
+      });
+      this.contacts[index].visible=false;
       this.indexChat=index;
-
     }
   }
 })
