@@ -47,10 +47,7 @@
           </div>
           <!-- chat -->
           <div  id="container_message" class="clearfix">
-            <div v-for="element in this.contacts[this.indexChat].messages" v-if="element.status=='sent'"    class="sent_message">
-              {{element.text}}
-            </div>
-            <div   v-for="element in this.contacts[this.indexChat].messages" v-if="element.status=='received'" class="recevied_message">
+            <div v-for="element in this.contacts[this.indexChat].messages"  :class=" (element.status=='sent') ? 'sent_message':'recevied_message' ">
               {{element.text}}
             </div>
           </div>
