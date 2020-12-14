@@ -50,6 +50,12 @@ body {
   cursor: pointer;
 }
 
+.btn_grey_dark {
+  margin: 0 18px;
+  color: #6b7376;
+  cursor: pointer;
+}
+
 #background_wrapper {
   width: 100vw;
   height: 100vh;
@@ -180,9 +186,9 @@ ul#text_notify > li > a {
 /* search aside-CLOSE */
 /* previews chat */
 #container_previews_chat {
-  height: calc( 100% - 162px);
+  height: calc( 100% - 168px);
   background-color: white;
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 div.previews_chat {
@@ -239,7 +245,7 @@ div.previews_chat {
   padding: 5% 8%;
   align-content: space-around;
   background-image: url(../img/background_chat.jpg);
-  overflow: auto;
+  overflow-y: scroll;
 }
 .sent_message, .recevied_message {
   width: 320px;
@@ -263,10 +269,12 @@ div.previews_chat {
 }
 #form_instantchat {
   height: 50px;
-  padding: 8px 10px;
+  padding: 8px 0px;
 }
 #form_instantchat input {
   height: calc(100%);
-  width: calc(100% - 67px);
+  width: calc(100% - 113px);
+  font-size: 14px;
+  padding: 0 10px;
 }
 /* select chat view-CLOSE */
