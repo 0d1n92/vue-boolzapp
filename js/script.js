@@ -122,15 +122,38 @@ data: {
       this.indexChat=index;
 
     },
-    submit: function (text) {
+    submit: function (text,date,status) {
         text=this.Newtext,
+        date=dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss');
+        status='received';
         this.contacts[this.indexChat].messages.push(
           {
             text,
+            date,
+            status,
           }
         )
+        this.newSentMesseage();
+        clearInterval(this.newSentMesseage);
 
+    },
+    newSentMesseage: function (text,date,status) {
+      var adresses=this.contacts[this.indexChat].messages;
+      setTimeout(function(){
+      text="OK";
+      date=dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss');
+      status='sent';
+      adresses.push(
+        {
+          text,
+          date,
+          status,
+        }
+      )
+    }, 1000);
 
-    }
+  },
+
   }
+
 })
