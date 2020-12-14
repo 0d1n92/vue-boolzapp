@@ -175,6 +175,10 @@ ul#text_notify > li > a {
   background-color: white;
   overflow: auto;
 }
+.previews_message,.date {
+  color: #b6c0d3;
+  font-size: 12px;
+}
 div.previews_chat {
   height: 60px;
   display:flex;
@@ -190,11 +194,15 @@ div.previews_chat {
 }
 .previews_message {
   width: 200px;
-  color: #b6c0d3;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.date {
+  margin-top: 15px;
+  align-self: flex-start ;
+}
+
 /* search aside-CLOSE */
 
 /* aside previews chat-CLOSE */

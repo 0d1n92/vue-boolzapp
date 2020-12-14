@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>boolzapp</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.7/dayjs.min.js" integrity="sha512-kZ+x2gdehn6OZMWZSp3Vt5R+v9hQTYEATQwaUfWquhxbvNVAy6IRtYs7asdyxKUTqG0I5ZqBqnzcBrpnHJCAGw==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -21,7 +22,6 @@
               <p id="user_id" >
                 {{user.name}} {{user.surname}}
               </p>
-              </p>
             </div>
             <div id="btn_user" class="float_right">
               <button type="button" name="button"><i class="fas fa-circle-notch"></i></button>
@@ -29,9 +29,9 @@
               <button type="button" name="button"><i class="fas fa-ellipsis-v"></i></button>
             </div>
           </div>
+
           <div id="banner_notify">
               <i class="fas fa-bell-slash"></i>
-
               <ul id="text_notify">
                 <li>
                   <h2>Ricevi notifiche di nuovi messaggi</h2>
@@ -40,19 +40,22 @@
                   <a href="#">Attiva notifiche desktop</a>
                 </li>
               </ul>
-
           </div>
+
           <div id="form_search">
             <button type="button" id="btn_search" name="button"><i class="fas fa-search"></i></button>
             <input placeholder="Cerca o inizia un nuova chat" type="text" name="" value="">
           </div>
+
           <div id="container_previews_chat">
+
             <div  v-for="(element, index) in contacts" @click="activeChat(index)" :class='(element.visible==true)? "":"active"'class="previews_chat">
               <img class="avatar" :src="element.avatar">
                 <ul class="previews" >
                   <li>{{element.name}}</li>
                   <li class="previews_message">{{element.messages[(element.messages.length) - 1].text}}</li>
                 </ul>
+                <span class="date" >{{element.messages[(element.messages.length) - 1].date}}</span>
             </div>
 
           </div>
@@ -60,9 +63,13 @@
         </aside>
 
 
-        <section id="selected_chat_view">
+        <div id="selected_chat_view">
+            <!-- header chat -->
            <div  id="header_selected_chat">
+             <img class="avatar" :src="this.contacts[this.indexChat].avatar" alt="">
 
+              {{this.contacts[this.indexChat].name}}
+              {{this.contacts[this.indexChat].log}}
           </div>
           <!-- chat -->
           <div  id="container_message" class="clearfix">
@@ -76,7 +83,7 @@
             <button  type="button" name="button">send</button>
           </div>
 
-        </section>
+        </div>
 
       </div>
             <!-- contenitore di vue-CLOSE -->

@@ -8,18 +8,18 @@ var app= new Vue({
 el: '#app',
 data: {
     indexChat:0,
-    activeClass:false,
-
-
     user:{
         name: 'Enrico',
         surname: 'Rombaldoni',
       },
+  
+
     contacts: [
       {
         name: "Lapo",
         avatar: 'img/icons/avatars/lapo_avatar.png',
-        visible: true,
+        visible: false,
+        log: "ultimo accesso oggi alle: "+ dayjs(new Date()).subtract(20,'minute').format('HH:mm:ss').toString(),
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -42,6 +42,7 @@ data: {
         name: 'Bendetta',
         avatar: 'img/icons/avatars/benedetta_avatar.png',
         visible: true,
+        log: "ultimo accesso oggi alle: "+ dayjs(new Date()).subtract(126,'minute').format('HH:mm:ss').toString(),
         messages: [
           {
             date: '20/03/2020 16:30:00',
@@ -64,6 +65,7 @@ data: {
         name: 'Putin',
         avatar: 'img/icons/avatars/putin_avatar.png',
         visible: true,
+        log:"ultimo accesso oggi alle: "+ dayjs(new Date()).subtract(10,'minute').format('HH:mm:ss').toString(),
         messages: [
           {
             date: '28/03/2020 10:10:40',
@@ -86,6 +88,7 @@ data: {
         name: 'Yagami',
         avatar: 'img/icons/avatars/yagami_avatar.png',
         visible: true,
+        log: "ultimo accesso oggi alle: "+ dayjs(new Date()).subtract(142,'minute').format('HH:mm:ss').toString(),
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -106,11 +109,15 @@ data: {
   methods: {
   // Click sul contatto mostra la conversazione del contatto cliccato
     activeChat: function (index) {
+
+
       this.contacts.forEach((element) => {
         element.visible=true;
       });
+
       this.contacts[index].visible=false;
       this.indexChat=index;
+
     }
   }
 })
