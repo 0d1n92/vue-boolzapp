@@ -24,9 +24,9 @@
               </p>
             </div>
             <div id="btn_user" class="float_right">
-              <button type="button" name="button"><i class="fas fa-circle-notch"></i></button>
-              <button type="button" name="button"><i class="fas fa-comment-alt"></i></button>
-              <button type="button" name="button"><i class="fas fa-ellipsis-v"></i></button>
+              <button class="btn_grey" type="button" name="button"><i class="fas fa-circle-notch"></i></button>
+              <button class="btn_grey" type="button" name="button"><i class="fas fa-comment-alt"></i></button>
+              <button class="btn_grey" type="button" name="button"><i class="fas fa-ellipsis-v"></i></button>
             </div>
           </div>
 
@@ -66,21 +66,32 @@
         <div id="selected_chat_view">
             <!-- header chat -->
            <div  id="header_selected_chat">
-             <img class="avatar" :src="this.contacts[this.indexChat].avatar" alt="">
+             <div id="header_selected_chat_left">
+               <img class="avatar" :src="this.contacts[this.indexChat].avatar" alt="">
+                <ul class="header_chat_info">
+                  <li>{{this.contacts[this.indexChat].name}}</li>
+                  <li class="log_acces">{{this.contacts[this.indexChat].log}}</li>
+                </ul>
+              </div>
+              <div id="header_selected_chat_right">
+                <button class="btn_grey" type="button" name="button"><i class="fas fa-search"></i></button>
+                <button class="btn_grey" type="button" name="button"><i class="fas fa-paperclip"></i></button>
+                <button class="btn_grey" type="button" name="button">  <i class="fas fa-ellipsis-v"></i></button>
+              </div>
 
-              {{this.contacts[this.indexChat].name}}
-              {{this.contacts[this.indexChat].log}}
           </div>
           <!-- chat -->
           <div  id="container_message" class="clearfix">
             <div v-for="element in this.contacts[this.indexChat].messages"  :class=" (element.status=='sent') ? 'sent_message':'recevied_message' ">
               {{element.text}}
+              <p class="date_message">{{element.date}}</p>
             </div>
           </div>
 
           <div id="form_instantchat">
-            <input type="text"  name="" value="">
-            <button  type="button" name="button">send</button>
+            <button  class="btn_grey" type="button" name="button"><i class="far fa-smile"></i></button>
+            <input type="text" placeholder="scrivi un messaggio" name="" value="">
+            <button class="btn_grey" type="button" name="button"><i class="fas fa-microphone"></i></button>
           </div>
 
         </div>
