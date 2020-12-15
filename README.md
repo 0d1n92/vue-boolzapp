@@ -1,13 +1,13 @@
-<h1>Replication webApp Wahtsapp/h1>
+<h1>Replication webApp Wahtsapp</h1>
 <p>Exercise of vue.js replication of webApp whatsApp</p>
 <h4>Tecnologis used:</h4>
 <ul>
-  <li>Vue.js<li>
+  <li>Vue.js</li>
   <li>html</li>
   <li>css</li>
-  <li>js 6<li>
+  <li>js 6</li>
   <li>Flex css</li>
-  <li>day.js<li>
+  <li>day.js</li>
 </ul>
 <h2>Track exercise</h2>
 
@@ -57,3 +57,4 @@
  <p>
 
 <h4>Screnshoot result:</h4>
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/screen/Schermata%202020-12-15%20alle%2016.46.45-fullpage.png?raw=true)
