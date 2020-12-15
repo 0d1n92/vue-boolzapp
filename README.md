@@ -57,4 +57,4 @@
  <p>
 
 <h4>Screnshoot result:</h4>
-![alt text](https://github.com/0d1n92/vue-boolzapp/blob/main/screen/Schermata%202020-12-15%20alle%2016.46.45-fullpage.png?raw=true)
+![](/screen/Schermata%202020-12-15%20alle%2016.46.45-fullpage.png)
