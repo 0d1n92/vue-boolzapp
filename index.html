@@ -98,8 +98,7 @@
 
           <div id="form_instantchat">
             <div v-if="!isHideEmoticons" id="emoticons_box">
-              <span v-for= "element in emoticons">{{element}}</span>
-
+              <span  @click="log(aEmoticon)" v-for= "element in emoticons">{{element}}</span>
             </div>
             <button @click="isHideEmoticons= !isHideEmoticons" class="btn_grey_dark" type="button" name="button"><i class="far fa-smile"></i></button>
             <input  v-on:keyup.enter="submit()" type="text" v-model="Newtext"  placeholder="scrivi un messaggio" name="" value="">
