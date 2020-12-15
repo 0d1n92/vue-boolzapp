@@ -56,5 +56,5 @@
 
  <p>
 
-<h4>Screnshoot result:</h4>
-![screen-shot](screen/screenshot.png)
+<h4>Screnshot result:</h4>
+<img src="https://drive.google.com/uc?export=view&id=1rbBWxd8SJXGdMZLMJ1rl1BxYZBzsRZ-d" alt="screnShot" >
