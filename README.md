@@ -1,4 +1,4 @@
-<h1>Replication webApp Wahtsapp</h1>
+<h1>Replication webApp whatsApp</h1>
 <p>Exercise of vue.js replication of webApp whatsApp</p>
 <h4>Tecnologis used:</h4>
 <ul>
