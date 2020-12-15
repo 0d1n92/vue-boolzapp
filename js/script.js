@@ -168,10 +168,11 @@ var app= new Vue({
 
       search:function () {
         let findKey=this.find;
+        let SearchName=this.searchName.toLowerCase();
 
         this.contacts.forEach((element, i) => {
-
-          if(!element.name.includes(this.searchName) && this.searchName!=""){
+          let name=element.name.toLowerCase();
+          if(!name.includes(SearchName) && SearchName!=""){
             element.find=false;
           } else {
             element.find=true;
