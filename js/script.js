@@ -12,8 +12,8 @@
 
 
 var app= new Vue({
-el: '#app',
-data: {
+  el: '#app',
+  data: {
     indexChat:0,
     Newtext:"",
     searchName:"",
@@ -27,6 +27,7 @@ data: {
         name: "Lapo",
         avatar: 'img/icons/avatars/lapo_avatar.png',
         visible: true,
+        find:true,
 
         log: "ultimo accesso oggi alle: "+ dayjs(new Date()).subtract(20,'minute').format('HH:mm:ss').toString(),
         messages: [
@@ -51,6 +52,7 @@ data: {
         name: 'Bendetta',
         avatar: 'img/icons/avatars/benedetta_avatar.png',
         visible: false,
+        find:true,
         log: "ultimo accesso oggi alle: "+ dayjs(new Date()).subtract(126,'minute').format('HH:mm:ss').toString(),
         messages: [
           {
@@ -74,6 +76,7 @@ data: {
         name: 'Putin',
         avatar: 'img/icons/avatars/putin_avatar.png',
         visible: false,
+        find:true,
         log:"ultimo accesso oggi alle: "+ dayjs(new Date()).subtract(10,'minute').format('HH:mm:ss').toString(),
         messages: [
           {
@@ -97,6 +100,7 @@ data: {
         name: 'Yagami',
         avatar: 'img/icons/avatars/yagami_avatar.png',
         visible: false,
+        find:true,
         log: "ultimo accesso oggi alle: "+ dayjs(new Date()).subtract(142,'minute').format('HH:mm:ss').toString(),
         messages: [
           {
@@ -142,6 +146,7 @@ data: {
         );
         this.newSentMesseage();
 
+
     },
     //nuovo messaggio inviato dopo un secondo dal ricevuto
     newSentMesseage: function (text,date,status) {
@@ -162,7 +167,17 @@ data: {
       },
 
       search:function () {
-      
+        let findKey=this.find;
+
+        this.contacts.forEach((element, i) => {
+
+          if(!element.name.includes(this.searchName) && this.searchName!=""){
+            element.find=false;
+          } else {
+            element.find=true;
+          }
+        });
+
       },
     },
     //methods CLOSE
