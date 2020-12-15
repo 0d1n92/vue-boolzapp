@@ -44,7 +44,7 @@
           <!-- search -->
           <div id="form_search">
             <button type="button" id="btn_search" name="button"><i class="fas fa-search"></i></button>
-            <input   v-on:keydown.enter="search()"    v-model="searchName" placeholder="Cerca o inizia un nuova chat" type="text" name="" value="">
+            <input   v-on:keydown="search()"    v-model="searchName" placeholder="Cerca o inizia un nuova chat" type="text" name="" value="">
           </div>
           <!-- search close -->
 
@@ -83,12 +83,15 @@
 
           </div>
           <!-- chat -->
-          <div  id="container_message" class="clearfix">
-            <div v-for="element in contacts[indexChat].messages" v-on:click.left="element.isHiddenOptions= !element.isHiddenOptions" :class=" (element.status=='sent') ? 'sent_message':'recevied_message' ">
+          <div  id="container_messages" class="clearfix">
+            <div v-for="(element,index) in contacts[indexChat].messages" @click="element.isHiddenOptions= !element.isHiddenOptions" :class=" (element.status=='sent') ? 'sent_message':'recevied_message' ">
               {{element.text}}
               <p class="date_message">{{element.date}}</p>
               <div v-if="!element.isHiddenOptions" class="option_menu">
-                <p>Test</p>
+                <ul class="btn_option">
+                  <li><button @click="removeMessage(index)" type="button" name="button">Cancella Messaggio</button></li>
+                  <li><button type="button" name="button">Info Messaggio</button></li>
+                </ul>
               </div>
             </div>
           </div>

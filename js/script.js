@@ -20,7 +20,6 @@ var app= new Vue({
     indexChat:0,
     Newtext:"",
     searchName:"",
-    NewResult:"",
 
     user:{
         name: 'Enrico',
@@ -197,9 +196,15 @@ var app= new Vue({
 
     },
 
-    ShowOptionMessage: function () {
+    removeMessage: function functionName(index) {
+      this.contacts[this.indexChat].messages.splice(index,1);
+    },
 
-    }
+
+    log: function (test) {
+      console.log(test);
+    },
+
   },
     //methods CLOSE
 

@@ -216,9 +216,9 @@ div.previews_chat {
 }
 
 /* search aside-CLOSE */
-
 /* aside previews chat-CLOSE */
-/* select chat view */
+
+/* SECTION RIGHT MESSAGE CHAT */
 #selected_chat_view {
   width:62%;
   height: 100%;
@@ -240,12 +240,15 @@ div.previews_chat {
   margin-left: 20px;
 }
 
-#container_message {
+#container_messages {
   height: calc(100% - 110px);
   padding: 5% 8%;
   align-content: space-around;
   background-image: url(../img/background_chat.jpg);
   overflow-y: scroll;
+}
+.wrap_massage {
+  position: relative;
 }
 .sent_message, .recevied_message {
   width: 320px;
@@ -255,10 +258,12 @@ div.previews_chat {
   padding: 14px 14px 5px 14px; /*stessi pixel del font*/
   border-radius: 10px;
   clear: both;
+  position: relative;
 }
 .sent_message {
   background-color: #d5f9ba;
   float:right;
+
 }
 .recevied_message {
   background: white;
@@ -266,6 +271,27 @@ div.previews_chat {
 }
 .date_message {
   text-align: right;
+}
+.option_menu {
+  position: absolute;
+  right: 20px;
+  text-align: center;
+  width: 200px;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.18);
+  box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.18);
+}
+ul.btn_option > li {
+  list-style: none;
+  font-size: 14px;
+}
+ul.btn_option li button {
+  background-color: transparent;
+  color: #757575;
+  margin:10px;
+}
+ul.btn_option li button:hover {
+  color: black;
 }
 #form_instantchat {
   height: 50px;
