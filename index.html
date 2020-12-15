@@ -84,9 +84,12 @@
           </div>
           <!-- chat -->
           <div  id="container_message" class="clearfix">
-            <div v-for="element in contacts[indexChat].messages"  :class=" (element.status=='sent') ? 'sent_message':'recevied_message' ">
+            <div v-for="element in contacts[indexChat].messages" v-on:click.left="element.isHiddenOptions= !element.isHiddenOptions" :class=" (element.status=='sent') ? 'sent_message':'recevied_message' ">
               {{element.text}}
               <p class="date_message">{{element.date}}</p>
+              <div v-if="!element.isHiddenOptions" class="option_menu">
+                <p>Test</p>
+              </div>
             </div>
           </div>
 

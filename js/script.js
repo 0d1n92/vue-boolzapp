@@ -7,6 +7,9 @@
 // Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 // Milestone 4
 // Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+// Milestone 5 - opzionale
+// Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+
 
 
 
@@ -18,6 +21,7 @@ var app= new Vue({
     Newtext:"",
     searchName:"",
     NewResult:"",
+
     user:{
         name: 'Enrico',
         surname: 'Rombaldoni',
@@ -29,22 +33,26 @@ var app= new Vue({
         visible: true,
         find:true,
 
+
         log: "ultimo accesso oggi alle: "+ dayjs(new Date()).subtract(20,'minute').format('HH:mm:ss').toString(),
         messages: [
           {
             date: '10/01/2020 15:30:55',
             text: 'Hai portato a spasso il cane?',
-            status: 'sent'
+            status: 'sent',
+            isHiddenOptions: true,
           },
           {
             date: '10/01/2020 15:50:00',
             text: 'Ricordati di dargli da mangiare',
-            status: 'sent'
+            status: 'sent',
+            isHiddenOptions: true,
           },
           {
             date: '10/01/2020 16:15:22',
             text: 'Tutto fatto!',
-            status: 'received'
+            status: 'received',
+            isHiddenOptions: true,
           }
         ],
       },
@@ -58,17 +66,20 @@ var app= new Vue({
           {
             date: '20/03/2020 16:30:00',
             text: 'Ciao come stai?',
-            status: 'sent'
+            status: 'sent',
+            isHiddenOptions: true,
           },
           {
             date: '20/03/2020 16:30:55',
             text: 'Bene grazie! Stasera ci vediamo?',
-            status: 'received'
+            status: 'received',
+            isHiddenOptions: true,
           },
           {
             date: '20/03/2020 16:35:00',
             text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-            status: 'sent'
+            status: 'sent',
+            isHiddenOptions: true,
           }
         ],
       },
@@ -82,17 +93,20 @@ var app= new Vue({
           {
             date: '28/03/2020 10:10:40',
             text: 'La Marianna va in campagna',
-            status: 'received'
+            status: 'received',
+            isHiddenOptions: true,
           },
           {
             date: '28/03/2020 10:20:10',
             text: 'Sicuro di non aver sbagliato chat?',
-            status: 'sent'
+            status: 'sent',
+            isHiddenOptions: true,
           },
           {
             date: '28/03/2020 16:15:22',
             text: 'Ah scusa!',
-            status: 'received'
+            status: 'received',
+            isHiddenOptions: true,
           }
           ],
       },
@@ -106,12 +120,14 @@ var app= new Vue({
           {
             date: '10/01/2020 15:30:55',
             text: 'Lo sai che ha aperto una nuova pizzeria?',
-            status: 'sent'
+            status: 'sent',
+            isHiddenOptions: true,
           },
           {
             date: '10/01/2020 15:50:00',
             text: 'Si, ma preferirei andare al cinema',
-            status: 'received'
+            status: 'received',
+            isHiddenOptions: true,
           }
         ],
       },
@@ -164,23 +180,27 @@ var app= new Vue({
         )
         }, 1000);
 
-      },
-
-      search:function () {
-        let findKey=this.find;
-        let SearchName=this.searchName.toLowerCase();
-
-        this.contacts.forEach((element, i) => {
-          let name=element.name.toLowerCase();
-          if(!name.includes(SearchName) && SearchName!=""){
-            element.find=false;
-          } else {
-            element.find=true;
-          }
-        });
-
-      },
     },
+
+    search:function () {
+      let findKey=this.find;
+      let SearchName=this.searchName.toLowerCase();
+
+      this.contacts.forEach((element, i) => {
+        let name=element.name.toLowerCase();
+        if(!name.includes(SearchName) && SearchName!=""){
+          element.find=false;
+        } else {
+          element.find=true;
+        }
+      });
+
+    },
+
+    ShowOptionMessage: function () {
+
+    }
+  },
     //methods CLOSE
 
 
