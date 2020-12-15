@@ -57,4 +57,4 @@
  <p>
 
 <h4>Screnshoot result:</h4>
-![](screen/Schermata%202020-12-15%20alle%2016.46.45-fullpage.png)
+![screen-shot](screen/screenshot.png)
