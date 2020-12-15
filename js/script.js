@@ -10,10 +10,6 @@
 // Milestone 5 - opzionale
 // Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
 
-
-
-
-
 var app= new Vue({
   el: '#app',
   data: {
@@ -149,14 +145,17 @@ var app= new Vue({
     },
     //nuovo messaggio ricevuto
     submit: function (text,date,status) {
+
         text=this.Newtext,
         date=dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss');
         status='received';
+        isHiddenOptions= true,
         this.contacts[this.indexChat].messages.push(
           {
             text,
             date,
             status,
+            isHiddenOptions,
           }
         );
         this.newSentMesseage();
@@ -170,11 +169,13 @@ var app= new Vue({
         text="OK";
         date=dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss');
         status='sent';
+        isHiddenOptions= true,
         adresses.push(
           {
             text,
             date,
             status,
+            isHiddenOptions,
           }
         )
         }, 1000);
