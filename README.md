@@ -57,4 +57,4 @@
  <p>
 
 <h4>Screnshot result:</h4>
-<img src="https://drive.google.com/uc?export=view&id=1rbBWxd8SJXGdMZLMJ1rl1BxYZBzsRZ-d" alt="screnShot" >
+<img src="https://drive.google.com/uc?export=view&id=1rbBWxd8SJXGdMZLMJ1rl1BxYZBzsRZ-d" alt="screenShot" >
