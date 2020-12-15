@@ -5,6 +5,9 @@
 // Milestone 3
 // Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
 // Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+// Milestone 4
+// Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+
 
 
 
@@ -13,6 +16,8 @@ el: '#app',
 data: {
     indexChat:0,
     Newtext:"",
+    searchName:"",
+    NewResult:"",
     user:{
         name: 'Enrico',
         surname: 'Rombaldoni',
@@ -21,7 +26,8 @@ data: {
       {
         name: "Lapo",
         avatar: 'img/icons/avatars/lapo_avatar.png',
-        visible: false,
+        visible: true,
+
         log: "ultimo accesso oggi alle: "+ dayjs(new Date()).subtract(20,'minute').format('HH:mm:ss').toString(),
         messages: [
           {
@@ -44,7 +50,7 @@ data: {
       {
         name: 'Bendetta',
         avatar: 'img/icons/avatars/benedetta_avatar.png',
-        visible: true,
+        visible: false,
         log: "ultimo accesso oggi alle: "+ dayjs(new Date()).subtract(126,'minute').format('HH:mm:ss').toString(),
         messages: [
           {
@@ -67,7 +73,7 @@ data: {
       {
         name: 'Putin',
         avatar: 'img/icons/avatars/putin_avatar.png',
-        visible: true,
+        visible: false,
         log:"ultimo accesso oggi alle: "+ dayjs(new Date()).subtract(10,'minute').format('HH:mm:ss').toString(),
         messages: [
           {
@@ -90,7 +96,7 @@ data: {
       {
         name: 'Yagami',
         avatar: 'img/icons/avatars/yagami_avatar.png',
-        visible: true,
+        visible: false,
         log: "ultimo accesso oggi alle: "+ dayjs(new Date()).subtract(142,'minute').format('HH:mm:ss').toString(),
         messages: [
           {
@@ -115,13 +121,14 @@ data: {
 
 
       this.contacts.forEach((element) => {
-        element.visible=true;
+        element.visible=false;
       });
 
-      this.contacts[index].visible=false;
+      this.contacts[index].visible=true;
       this.indexChat=index;
 
     },
+    //nuovo messaggio ricevuto
     submit: function (text,date,status) {
         text=this.Newtext,
         date=dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss');
@@ -132,28 +139,33 @@ data: {
             date,
             status,
           }
-        )
+        );
         this.newSentMesseage();
-        clearInterval(this.newSentMesseage);
 
     },
+    //nuovo messaggio inviato dopo un secondo dal ricevuto
     newSentMesseage: function (text,date,status) {
-      var adresses=this.contacts[this.indexChat].messages;
-      setTimeout(function(){
-      text="OK";
-      date=dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss');
-      status='sent';
-      adresses.push(
-        {
-          text,
-          date,
-          status,
-        }
-      )
-    }, 1000);
+        var adresses=this.contacts[this.indexChat].messages;
+        setTimeout(function(){
+        text="OK";
+        date=dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss');
+        status='sent';
+        adresses.push(
+          {
+            text,
+            date,
+            status,
+          }
+        )
+        }, 1000);
 
-  },
+      },
 
-  }
+      search:function () {
+      
+      },
+    },
+    //methods CLOSE
+
 
 })

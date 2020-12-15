@@ -14,7 +14,7 @@
     <div id="background_wrapper">
       <!-- vue container-->
       <div id="app">
-
+        <!-- aside left -->
         <aside id="navigation_app">
           <div id="header_navigation_app" class="clearfix">
             <div id="user_info">
@@ -41,15 +41,16 @@
                 </li>
               </ul>
           </div>
-
+          <!-- search -->
           <div id="form_search">
             <button type="button" id="btn_search" name="button"><i class="fas fa-search"></i></button>
-            <input placeholder="Cerca o inizia un nuova chat" type="text" name="" value="">
+            <input   v-on:keyup.enter="search()"    v-model="searchName" placeholder="Cerca o inizia un nuova chat" type="text" name="" value="">
           </div>
+          <!-- search close -->
 
           <div id="container_previews_chat">
 
-            <div  v-for="(element, index) in this.contacts" @click="activeChat(index)" :class='(element.visible==true)? "":"active"'class="previews_chat">
+            <div v-for="(element, index) in contacts" @click="activeChat(index)" :class='(element.visible)? "active":""'class="previews_chat">
               <img class="avatar" :src="element.avatar">
                 <ul class="previews" >
                   <li>{{element.name}}</li>
@@ -61,16 +62,17 @@
           </div>
 
         </aside>
+        <!-- aside left-CLOSE -->
 
 
         <div id="selected_chat_view">
             <!-- header chat -->
            <div  id="header_selected_chat">
              <div id="header_selected_chat_left">
-               <img class="avatar" :src="this.contacts[this.indexChat].avatar" alt="">
+               <img class="avatar" :src="contacts[indexChat].avatar" alt="">
                 <ul class="header_chat_info">
-                  <li>{{this.contacts[this.indexChat].name}}</li>
-                  <li class="log_acces">{{this.contacts[this.indexChat].log}}</li>
+                  <li>{{contacts[indexChat].name}}</li>
+                  <li class="log_acces">{{contacts[indexChat].log}}</li>
                 </ul>
               </div>
               <div id="header_selected_chat_right">
@@ -82,7 +84,7 @@
           </div>
           <!-- chat -->
           <div  id="container_message" class="clearfix">
-            <div v-for="element in this.contacts[this.indexChat].messages"  :class=" (element.status=='sent') ? 'sent_message':'recevied_message' ">
+            <div v-for="element in contacts[indexChat].messages"  :class=" (element.status=='sent') ? 'sent_message':'recevied_message' ">
               {{element.text}}
               <p class="date_message">{{element.date}}</p>
             </div>
